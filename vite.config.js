@@ -8,9 +8,4 @@ export default defineConfig({
 		port: 5173, // Cố định port
 		strictPort: true, // Nếu port bị chiếm, Vite sẽ không đổi sang port khác
 	},
-	resolve: {
-		alias: {
-			'@': path.resolve(__dirname, './src'),
-		},
-	},
 });
