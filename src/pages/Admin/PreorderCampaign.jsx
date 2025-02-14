@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const PreorderCampaign = () => {
-    return (
-        <div>PreorderCampaign</div>
-    )
-}
+	return <div>PreorderCampaign</div>;
+};
 
-export default PreorderCampaign
+export default PreorderCampaign;
