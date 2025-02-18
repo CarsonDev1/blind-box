@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { useState, useRef } from 'react';
@@ -29,12 +30,12 @@ const ProductImages = ({ items }) => {
 				>
 					{items.map((item) => (
 						<SwiperSlide key={item._id}>
-							<div className='relative h-full w-full'>
+							<div className='relative w-full h-full'>
 								<img
-									src={item.image?.url || '/placeholder.svg'}
+									src={item?.url || '/placeholder.svg'}
 									alt=''
 									sizes='50vw'
-									className='object-contain rounded-md absolute inset-0 w-full h-full'
+									className='absolute inset-0 object-contain w-full h-full rounded-md'
 								/>
 							</div>
 						</SwiperSlide>
@@ -44,14 +45,14 @@ const ProductImages = ({ items }) => {
 				{/* Custom navigation buttons */}
 				<button
 					onClick={() => swiperRef.current?.slidePrev()}
-					className='absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all'
+					className='absolute z-10 p-2 transition-all -translate-y-1/2 rounded-full shadow-md left-4 top-1/2 bg-white/80 hover:bg-white'
 					aria-label='Previous slide'
 				>
 					<ChevronLeft className='w-6 h-6' />
 				</button>
 				<button
 					onClick={() => swiperRef.current?.slideNext()}
-					className='absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition-all'
+					className='absolute z-10 p-2 transition-all -translate-y-1/2 rounded-full shadow-md right-4 top-1/2 bg-white/80 hover:bg-white'
 					aria-label='Next slide'
 				>
 					<ChevronRight className='w-6 h-6' />
@@ -70,12 +71,12 @@ const ProductImages = ({ items }) => {
 			>
 				{items.map((item) => (
 					<SwiperSlide key={item._id}>
-						<div className='relative h-full w-full cursor-pointer'>
+						<div className='relative w-full h-full cursor-pointer'>
 							<img
-								src={item.image?.url || '/placeholder.svg'}
+								src={item?.url || '/placeholder.svg'}
 								alt=''
 								sizes='30vw'
-								className='object-contain rounded-md absolute w-full h-full inset-0'
+								className='absolute inset-0 object-contain w-full h-full rounded-md'
 							/>
 						</div>
 					</SwiperSlide>
