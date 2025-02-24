@@ -25,7 +25,10 @@ const publicRoutes = [
 	},
 	{
 		path: '/product',
-		children: [{ path: ':id', component: ProductDetail }],
+		children: [
+			{ index: true, component: ProductList },
+			{ path: ':slug', component: ProductDetail },
+		],
 		layout: DefaultLayout,
 	},
 	{
