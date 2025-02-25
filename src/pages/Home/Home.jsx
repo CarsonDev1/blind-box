@@ -14,7 +14,7 @@ function Home() {
 			<Navbar />
 			<ProductList />
 			<ProductHot />
-			<Steps
+			{/* <Steps
 				current={1}
 				items={[
 					{
@@ -31,7 +31,7 @@ function Home() {
 						description,
 					},
 				]}
-			/>
+			/> */}
 			<CountdownSection />
 			<VoucherCampaignSection />
 		</div>

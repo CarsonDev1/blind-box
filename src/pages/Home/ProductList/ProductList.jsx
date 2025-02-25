@@ -32,7 +32,7 @@ const ProductList = ({ title = 'ĐẶT HÀNG VỀ TAY SỚM NHẤT' }) => {
 
 	return (
 		<div className='relative'>
-			<div className="bg-[url('//theme.hstatic.net/1000069970/1001119059/14/preorder-bg.png?v=6834')] bg-no-repeat bg-cover pb-5 md:pb-10 lg:pb-20">
+			<div className="bg-[url('//theme.hstatic.net/1000069970/1001119059/14/preorder-bg.png?v=6834')] bg-no-repeat bg-cover pb-5 md:pb-10 lg:pb-80">
 				<div className='sec-com'>
 					<div className='container-lg'>
 						<div className='flex flex-col gap-3 md:gap-6'>

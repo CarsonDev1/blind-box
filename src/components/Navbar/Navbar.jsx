@@ -34,68 +34,6 @@ export default function Navbar() {
 
 	return (
 		<div className='flex flex-col'>
-			{/* Top Navigation */}
-			<nav className='text-white bg-black'>
-				<div className='flex items-center justify-between px-4 py-3 mx-auto container-lg max-w-7xl lg:justify-start lg:space-x-8'>
-					{/* Mobile Menu Button */}
-					<Sheet>
-						<SheetTrigger asChild>
-							<Button variant='ghost' size='icon' className='lg:hidden'>
-								<Menu className='w-6 h-6 text-white' />
-							</Button>
-						</SheetTrigger>
-						<SheetContent side='left' className='w-[300px] p-0'>
-							<div className='p-4 border-b'>
-								<h2 className='text-lg font-semibold'>Menu</h2>
-							</div>
-							{/* Mobile Navigation Links */}
-							<div className='p-4'>
-								{mainNavItems.map((item) => (
-									<Link key={item} to='#' className='block py-2 text-sm hover:text-gray-500'>
-										{item}
-									</Link>
-								))}
-								{/* Mobile Categories */}
-								<div className='mt-4 space-y-2'>
-									{categories.map((category) => (
-										<Collapsible key={category.name}>
-											<CollapsibleTrigger className='flex items-center justify-between w-full py-2 text-sm hover:text-gray-500'>
-												{category.name}
-												{category.hasSubmenu && <ChevronRight className='w-4 h-4' />}
-											</CollapsibleTrigger>
-											{category.hasSubmenu && (
-												<CollapsibleContent>
-													<div className='ml-4 space-y-2'>
-														{submenuItems[category.name].map((item) => (
-															<Link
-																key={item}
-																to='#'
-																className='block py-2 text-sm hover:text-gray-500'
-															>
-																{item}
-															</Link>
-														))}
-													</div>
-												</CollapsibleContent>
-											)}
-										</Collapsible>
-									))}
-								</div>
-							</div>
-						</SheetContent>
-					</Sheet>
-
-					{/* Desktop Navigation */}
-					<div className='hidden py-4 lg:flex lg:space-x-8'>
-						{mainNavItems.map((item) => (
-							<Link key={item} to='#' className='text-sm hover:text-gray-300'>
-								{item}
-							</Link>
-						))}
-					</div>
-				</div>
-			</nav>
-
 			<div className='flex flex-col lg:flex-row container-lg !px-0 md:px-4 !py-4'>
 				{/* Main Content */}
 				<main className='w-full'>
