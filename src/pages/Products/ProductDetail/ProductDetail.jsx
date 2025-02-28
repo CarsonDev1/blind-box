@@ -4,25 +4,30 @@ import CountdownTimer from '../../../components/CountDown/CountDown';
 import { useParams } from 'react-router';
 import { useEffect, useState } from 'react';
 import { GetBlindBoxById } from '../../../api/BlindBox/ApiBlindBox';
-import { getDetailPreorderCampaign } from '../../../api/PreorderCampaign/getPreorderCampaign';
+import { getAllImagesByBlindBoxId, getDetailPreorderCampaign } from '../../../api/PreorderCampaign/getPreorderCampaign';
 
 const ProductDetail = () => {
 	const params = useParams();
 	const { slug } = params;
-	console.log('slug', slug);
 
 	const [data, setData] = useState();
+	const [images, setImages] = useState([]);
+
+	console.log('data', data);
 
 	const productDetailBlind = async () => {
 		const res = await getDetailPreorderCampaign(slug);
 		setData(res);
+
+		if (res?.blindBox?.blindBoxId) {
+			const imagesList = await getAllImagesByBlindBoxId(res.blindBox.blindBoxId);
+			setImages(imagesList);
+		}
 	};
 
 	useEffect(() => {
 		productDetailBlind();
 	}, []);
-
-	console.log('data', data);
 
 	return (
 		<div className='sec-com'>
@@ -30,8 +35,12 @@ const ProductDetail = () => {
 				<div className='relative flex flex-col justify-between gap-6 lg:flex-row'>
 					{/* IMG */}
 					<div className='top-0 w-full lg:w-1/2 lg:sticky h-max'>
-						{data?.blindBox?.images?.galleryImages.length > 0 && (
-							<ProductImages items={data?.blindBox?.images?.galleryImages} />
+						{images && images.length > 0 ? (
+							<ProductImages items={images} />
+						) : (
+							data?.blindBox?.images?.galleryImages.length > 0 && (
+								<ProductImages items={data?.blindBox?.images?.galleryImages} />
+							)
 						)}
 					</div>
 					{/* TEXTS */}

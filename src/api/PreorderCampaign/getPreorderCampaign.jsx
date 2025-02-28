@@ -30,4 +30,14 @@ const getDetailPreorderCampaign = async (slug) => {
 	}
 };
 
-export { getPreorderCampaign, getDetailPreorderCampaign };
+const getAllImagesByBlindBoxId = async (blindBoxId) => {
+	try {
+		const response = await api.get(`/Image/GetAllByBlindBoxId/${blindBoxId}`, axiosConfigHeader);
+		return response.data;
+	} catch (error) {
+		console.log('>>> Api Get All Images By Blind Box ID Error: ', error);
+		return [];
+	}
+};
+
+export { getPreorderCampaign, getDetailPreorderCampaign, getAllImagesByBlindBoxId };

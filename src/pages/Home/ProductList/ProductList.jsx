@@ -10,9 +10,7 @@ import { getPreorderCampaign } from '../../../api/PreorderCampaign/getPreorderCa
 const tabs = [
 	{ id: 'DỰ ÁN THỊNH HÀNH', label: 'DỰ ÁN THỊNH HÀNH' },
 	{ id: 'MỚI RA MẮT', label: 'MỚI RA MẮT' },
-	{ id: 'MỞ BÁN ĐỢT 2', label: 'MỞ BÁN ĐỢT 2' },
 	{ id: 'SẮP KẾT THÚC', label: 'SẮP KẾT THÚC' },
-	{ id: 'SẮP VỀ HÀNG', label: 'SẮP VỀ HÀNG' },
 ];
 
 const ProductList = ({ title = 'ĐẶT HÀNG VỀ TAY SỚM NHẤT' }) => {

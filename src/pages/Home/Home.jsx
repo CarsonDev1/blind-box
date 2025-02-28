@@ -32,7 +32,7 @@ function Home() {
 					},
 				]}
 			/> */}
-			<CountdownSection />
+			{/* <CountdownSection /> */}
 			<VoucherCampaignSection />
 		</div>
 	);
